@@ -91,9 +91,23 @@ export function DashboardPreview() {
             <div>
               <div className="flex items-center justify-between mb-6">
                 <h4 className="text-lg font-semibold">Discovered Knowledge Overlaps</h4>
-                <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <TrendingUp className="w-4 h-4" />
-                  <span>Ranked by semantic similarity</span>
+                <div className="flex items-center gap-4">
+                  {overlapTopics.some(item => item.status === 'pending') && (
+                    <div className="flex items-center gap-2">
+                      <Button size="sm" variant="outline" className="h-8 px-3">
+                        <X className="w-3 h-3 mr-1" />
+                        Reject All
+                      </Button>
+                      <Button size="sm" variant="trust" className="h-8 px-3">
+                        <Check className="w-3 h-3 mr-1" />
+                        Approve All
+                      </Button>
+                    </div>
+                  )}
+                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                    <TrendingUp className="w-4 h-4" />
+                    <span>Ranked by semantic similarity</span>
+                  </div>
                 </div>
               </div>
               
