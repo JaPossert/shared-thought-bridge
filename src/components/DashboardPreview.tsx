@@ -3,18 +3,34 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { Check, X, FileText, Brain, Users, TrendingUp } from "lucide-react";
-
 export function DashboardPreview() {
-  const overlapTopics = [
-    { topic: "Machine Learning Research", similarity: 92, docs: 15, status: "approved" },
-    { topic: "Climate Change Data", similarity: 87, docs: 8, status: "pending" },
-    { topic: "Urban Planning Methods", similarity: 76, docs: 12, status: "approved" },
-    { topic: "Sustainable Technology", similarity: 71, docs: 6, status: "rejected" },
-    { topic: "Data Visualization", similarity: 68, docs: 9, status: "pending" }
-  ];
-
-  return (
-    <section className="py-24 bg-gradient-to-b from-background to-secondary/20">
+  const overlapTopics = [{
+    topic: "Machine Learning Research",
+    similarity: 92,
+    docs: 15,
+    status: "approved"
+  }, {
+    topic: "Climate Change Data",
+    similarity: 87,
+    docs: 8,
+    status: "pending"
+  }, {
+    topic: "Urban Planning Methods",
+    similarity: 76,
+    docs: 12,
+    status: "approved"
+  }, {
+    topic: "Sustainable Technology",
+    similarity: 71,
+    docs: 6,
+    status: "rejected"
+  }, {
+    topic: "Data Visualization",
+    similarity: 68,
+    docs: 9,
+    status: "pending"
+  }];
+  return <section className="py-24 bg-gradient-to-b from-background to-secondary/20">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4">See Knowledge Overlaps in Action</h2>
@@ -34,7 +50,7 @@ export function DashboardPreview() {
                 </div>
                 <div>
                   <h3 className="text-2xl font-semibold">Knowledge Discovery Session</h3>
-                  <p className="text-muted-foreground">with Dr. Sarah Chen • Research Collaboration</p>
+                  <p className="text-muted-foreground">with Dr. Sarah Senior • Research Collaboration</p>
                 </div>
               </div>
               <Badge variant="outline" className="bg-trust-light/20 text-primary border-primary/20">
@@ -82,8 +98,7 @@ export function DashboardPreview() {
               </div>
               
               <div className="space-y-4">
-                {overlapTopics.map((item, index) => (
-                  <Card key={index} className="p-4 bg-background/60 border border-border/30 hover:shadow-md transition-all duration-200">
+                {overlapTopics.map((item, index) => <Card key={index} className="p-4 bg-background/60 border border-border/30 hover:shadow-md transition-all duration-200">
                     <div className="flex items-center justify-between">
                       <div className="flex-1">
                         <div className="flex items-center gap-3 mb-2">
@@ -102,37 +117,29 @@ export function DashboardPreview() {
                       </div>
                       
                       <div className="flex items-center gap-2 ml-4">
-                        {item.status === 'approved' && (
-                          <Badge className="bg-green-100 text-green-800 border-green-200">
+                        {item.status === 'approved' && <Badge className="bg-green-100 text-green-800 border-green-200">
                             <Check className="w-3 h-3 mr-1" />
                             Approved
-                          </Badge>
-                        )}
-                        {item.status === 'rejected' && (
-                          <Badge variant="destructive" className="bg-red-100 text-red-800 border-red-200">
+                          </Badge>}
+                        {item.status === 'rejected' && <Badge variant="destructive" className="bg-red-100 text-red-800 border-red-200">
                             <X className="w-3 h-3 mr-1" />
                             Rejected
-                          </Badge>
-                        )}
-                        {item.status === 'pending' && (
-                          <div className="flex gap-2">
+                          </Badge>}
+                        {item.status === 'pending' && <div className="flex gap-2">
                             <Button size="sm" variant="outline" className="h-8 px-3">
                               <X className="w-3 h-3" />
                             </Button>
                             <Button size="sm" variant="trust" className="h-8 px-3">
                               <Check className="w-3 h-3" />
                             </Button>
-                          </div>
-                        )}
+                          </div>}
                       </div>
                     </div>
-                  </Card>
-                ))}
+                  </Card>)}
               </div>
             </div>
           </Card>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 }
