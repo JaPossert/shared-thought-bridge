@@ -76,7 +76,7 @@ export function DashboardPreview() {
               <Card className="p-4 bg-gradient-to-br from-privacy/5 to-privacy/10 border-privacy/20">
                 <div className="text-center">
                   <div className="text-2xl font-bold text-privacy mb-1">78%</div>
-                  <div className="text-xs text-muted-foreground">Privacy Score</div>
+                  <div className="text-xs text-muted-foreground">Privacy Score (beta)</div>
                 </div>
               </Card>
               <Card className="p-4 bg-gradient-to-br from-muted/5 to-muted/10 border-border">
