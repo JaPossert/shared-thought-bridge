@@ -1,9 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Shield, Users, Lock, Eye } from "lucide-react";
-
 export function HeroSection() {
-  return (
-    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-background via-trust-light/20 to-background overflow-hidden">
+  return <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-background via-trust-light/20 to-background overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,hsl(var(--primary)_/_0.1),transparent_50%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,hsl(var(--accent)_/_0.1),transparent_50%)]" />
@@ -24,10 +22,8 @@ export function HeroSection() {
             <span className="bg-gradient-to-r from-accent to-privacy bg-clip-text text-transparent">Sharing Data</span>
           </h1>
           
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
-            Connect your second brains with trusted collaborators and discover knowledge overlaps 
-            through end-to-end encrypted semantic analysis—no raw data ever leaves your control.
-          </p>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">Connect your second brains with trusted collaborators and discover knowledge overlaps through end-to-end encrypted semantic analysis—
+no raw data ever leaves your control.</p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
             <Button variant="hero" size="lg" className="px-8 py-3">
@@ -50,11 +46,11 @@ export function HeroSection() {
             </div>
             <div className="flex items-center gap-2">
               <Users className="w-4 h-4" />
-              <span>Trusted by Researchers</span>
+              <span>Trusted by
+agrowing number of users</span>
             </div>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 }
