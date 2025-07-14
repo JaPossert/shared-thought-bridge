@@ -14,13 +14,299 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      collaboration_sessions: {
+        Row: {
+          created_at: string
+          expires_at: string
+          id: string
+          initiator_id: string
+          participant_id: string
+          session_data: Json | null
+          session_status: string
+          shared_topics: string[] | null
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          expires_at?: string
+          id?: string
+          initiator_id: string
+          participant_id: string
+          session_data?: Json | null
+          session_status?: string
+          shared_topics?: string[] | null
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          expires_at?: string
+          id?: string
+          initiator_id?: string
+          participant_id?: string
+          session_data?: Json | null
+          session_status?: string
+          shared_topics?: string[] | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      content_summaries: {
+        Row: {
+          content_hash: string
+          created_at: string
+          embedding_vector: string | null
+          expires_at: string
+          file_path: string | null
+          id: string
+          source_type: string
+          status: string
+          summary: string | null
+          topics: string[] | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          content_hash: string
+          created_at?: string
+          embedding_vector?: string | null
+          expires_at?: string
+          file_path?: string | null
+          id?: string
+          source_type: string
+          status?: string
+          summary?: string | null
+          topics?: string[] | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          content_hash?: string
+          created_at?: string
+          embedding_vector?: string | null
+          expires_at?: string
+          file_path?: string | null
+          id?: string
+          source_type?: string
+          status?: string
+          summary?: string | null
+          topics?: string[] | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      data_sources: {
+        Row: {
+          access_token_hash: string | null
+          connection_status: string
+          created_at: string
+          id: string
+          last_sync: string | null
+          metadata: Json | null
+          refresh_token_hash: string | null
+          source_type: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          access_token_hash?: string | null
+          connection_status?: string
+          created_at?: string
+          id?: string
+          last_sync?: string | null
+          metadata?: Json | null
+          refresh_token_hash?: string | null
+          source_type: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          access_token_hash?: string | null
+          connection_status?: string
+          created_at?: string
+          id?: string
+          last_sync?: string | null
+          metadata?: Json | null
+          refresh_token_hash?: string | null
+          source_type?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      privacy_settings: {
+        Row: {
+          auto_approve_topics: boolean | null
+          created_at: string
+          data_retention_days: number | null
+          excluded_file_patterns: string[] | null
+          excluded_topics: string[] | null
+          id: string
+          share_personal_content: boolean | null
+          share_work_content: boolean | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          auto_approve_topics?: boolean | null
+          created_at?: string
+          data_retention_days?: number | null
+          excluded_file_patterns?: string[] | null
+          excluded_topics?: string[] | null
+          id?: string
+          share_personal_content?: boolean | null
+          share_work_content?: boolean | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          auto_approve_topics?: boolean | null
+          created_at?: string
+          data_retention_days?: number | null
+          excluded_file_patterns?: string[] | null
+          excluded_topics?: string[] | null
+          id?: string
+          share_personal_content?: boolean | null
+          share_work_content?: boolean | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          created_at: string
+          email: string | null
+          full_name: string | null
+          id: string
+          onboarding_completed: boolean | null
+          privacy_preferences: Json | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          email?: string | null
+          full_name?: string | null
+          id?: string
+          onboarding_completed?: boolean | null
+          privacy_preferences?: Json | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          email?: string | null
+          full_name?: string | null
+          id?: string
+          onboarding_completed?: boolean | null
+          privacy_preferences?: Json | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      binary_quantize: {
+        Args: { "": string } | { "": unknown }
+        Returns: unknown
+      }
+      cleanup_expired_content: {
+        Args: Record<PropertyKey, never>
+        Returns: undefined
+      }
+      halfvec_avg: {
+        Args: { "": number[] }
+        Returns: unknown
+      }
+      halfvec_out: {
+        Args: { "": unknown }
+        Returns: unknown
+      }
+      halfvec_send: {
+        Args: { "": unknown }
+        Returns: string
+      }
+      halfvec_typmod_in: {
+        Args: { "": unknown[] }
+        Returns: number
+      }
+      hnsw_bit_support: {
+        Args: { "": unknown }
+        Returns: unknown
+      }
+      hnsw_halfvec_support: {
+        Args: { "": unknown }
+        Returns: unknown
+      }
+      hnsw_sparsevec_support: {
+        Args: { "": unknown }
+        Returns: unknown
+      }
+      hnswhandler: {
+        Args: { "": unknown }
+        Returns: unknown
+      }
+      ivfflat_bit_support: {
+        Args: { "": unknown }
+        Returns: unknown
+      }
+      ivfflat_halfvec_support: {
+        Args: { "": unknown }
+        Returns: unknown
+      }
+      ivfflathandler: {
+        Args: { "": unknown }
+        Returns: unknown
+      }
+      l2_norm: {
+        Args: { "": unknown } | { "": unknown }
+        Returns: number
+      }
+      l2_normalize: {
+        Args: { "": string } | { "": unknown } | { "": unknown }
+        Returns: string
+      }
+      sparsevec_out: {
+        Args: { "": unknown }
+        Returns: unknown
+      }
+      sparsevec_send: {
+        Args: { "": unknown }
+        Returns: string
+      }
+      sparsevec_typmod_in: {
+        Args: { "": unknown[] }
+        Returns: number
+      }
+      vector_avg: {
+        Args: { "": number[] }
+        Returns: string
+      }
+      vector_dims: {
+        Args: { "": string } | { "": unknown }
+        Returns: number
+      }
+      vector_norm: {
+        Args: { "": string }
+        Returns: number
+      }
+      vector_out: {
+        Args: { "": string }
+        Returns: unknown
+      }
+      vector_send: {
+        Args: { "": string }
+        Returns: string
+      }
+      vector_typmod_in: {
+        Args: { "": unknown[] }
+        Returns: number
+      }
     }
     Enums: {
       [_ in never]: never
