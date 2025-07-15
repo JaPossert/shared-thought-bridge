@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -14,8 +14,17 @@ const Auth = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [defaultTab, setDefaultTab] = useState("signin");
   const navigate = useNavigate();
   const { toast } = useToast();
+  const [searchParams] = useSearchParams();
+
+  useEffect(() => {
+    const mode = searchParams.get("mode");
+    if (mode === "signup" || mode === "signin") {
+      setDefaultTab(mode);
+    }
+  }, [searchParams]);
 
   const handleSignUp = async (email: string, password: string, fullName: string) => {
     setIsLoading(true);
@@ -223,7 +232,7 @@ const Auth = () => {
             </Alert>
           )}
           
-          <Tabs defaultValue="signin" className="w-full">
+          <Tabs value={defaultTab} onValueChange={setDefaultTab} className="w-full">
             <TabsList className="grid w-full grid-cols-2">
               <TabsTrigger value="signin">Sign In</TabsTrigger>
               <TabsTrigger value="signup">Sign Up</TabsTrigger>
