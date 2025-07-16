@@ -28,24 +28,24 @@ const FileProcessing = () => {
   return (
     <div className="min-h-screen bg-background p-4">
       <div className="max-w-7xl mx-auto space-y-6">
-        <div className="flex items-center gap-4">
+        <div className="flex flex-col sm:flex-row sm:items-center gap-4">
           <Button
             variant="outline"
             size="sm"
             onClick={() => navigate("/")}
-            className="flex items-center gap-2"
+            className="flex items-center gap-2 w-fit"
           >
             <ArrowLeft className="h-4 w-4" />
             Back to Home
           </Button>
-          <h1 className="text-3xl font-bold">File Processing</h1>
+          <h1 className="text-2xl sm:text-3xl font-bold">File Processing</h1>
         </div>
 
-        <div className="grid gap-6 lg:grid-cols-3">
-          <div className="lg:col-span-2">
+        <div className="grid gap-6 xl:grid-cols-3">
+          <div className="xl:col-span-2 space-y-6">
             <FileProcessingDashboard />
           </div>
-          <div>
+          <div className="space-y-6">
             <GoogleDriveConnection />
           </div>
         </div>

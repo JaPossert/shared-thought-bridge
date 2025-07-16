@@ -33,20 +33,20 @@ export function TrustSection() {
   return (
     <section className="py-24 bg-gradient-to-b from-secondary/30 to-background">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12 sm:mb-16 px-4">
           <div className="inline-flex items-center gap-2 bg-trust-light/20 backdrop-blur-sm border border-primary/20 rounded-full px-4 py-2 mb-6">
             <Lock className="w-4 h-4 text-primary" />
             <span className="text-sm font-medium text-primary">Trust & Security</span>
           </div>
           
-          <h2 className="text-4xl font-bold mb-4">Your Privacy is Our Foundation</h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">Your Privacy is Our Foundation</h2>
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
             Built with military-grade encryption and designed so that even we can't access your sensitive information
           </p>
         </div>
         
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mb-12 sm:mb-16 px-4 lg:px-0">
             {features.map((feature, index) => (
               <Card key={index} className="p-8 bg-background/60 backdrop-blur-sm border border-border/50 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300">
                 <div className="flex items-start gap-4">
@@ -68,7 +68,7 @@ export function TrustSection() {
           
           {/* Trust metrics */}
           <div className="bg-gradient-to-r from-background/80 to-trust-light/10 backdrop-blur-sm border border-border/30 rounded-2xl p-8">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 text-center">
               <div>
                 <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center">
                   <Eye className="w-8 h-8 text-primary" />

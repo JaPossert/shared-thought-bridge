@@ -14,28 +14,27 @@ export function HeroSection() {
             <span className="text-sm font-medium text-muted-foreground">Privacy-First Knowledge Discovery</span>
           </div>
           
-          <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-6">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold leading-tight mb-6">
             <span className="text-foreground">Discover </span>
             <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Shared Knowledge</span>
-            <br />
+            <br className="hidden sm:block" />
             <span className="text-foreground">Without </span>
             <span className="bg-gradient-to-r from-accent to-privacy bg-clip-text text-transparent">Sharing Data</span>
           </h1>
           
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">Connect your second brains with trusted collaborators and discover knowledge overlaps through end-to-end encrypted semantic analysis—
-no raw data ever leaves your control.</p>
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 px-4">Connect your second brains with trusted collaborators and discover knowledge overlaps through end-to-end encrypted semantic analysis—no raw data ever leaves your control.</p>
           
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-            <Button variant="hero" size="lg" className="px-8 py-3">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-12 px-4">
+            <Button variant="hero" size="lg" className="w-full sm:w-auto px-6 sm:px-8 py-3">
               Start Private Discovery
             </Button>
-            <Button variant="outline" size="lg" className="px-8 py-3">
+            <Button variant="outline" size="lg" className="w-full sm:w-auto px-6 sm:px-8 py-3">
               See How It Works
             </Button>
           </div>
           
           {/* Trust indicators */}
-          <div className="flex flex-wrap items-center justify-center gap-8 text-sm text-muted-foreground">
+          <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-4 sm:gap-8 text-sm text-muted-foreground px-4">
             <div className="flex items-center gap-2">
               <Lock className="w-4 h-4" />
               <span>End-to-End Encrypted</span>

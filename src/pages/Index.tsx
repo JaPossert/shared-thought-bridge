@@ -22,7 +22,7 @@ const Index = () => {
 
   // Navigation for authenticated users
   const AuthenticatedNav = () => (
-    <nav className="fixed top-4 right-4 z-50 flex gap-2">
+    <nav className="fixed top-4 right-4 z-50 flex flex-col sm:flex-row gap-2">
       <Button
         variant="outline"
         size="sm"
@@ -55,7 +55,7 @@ const Index = () => {
 
   // Navigation for unauthenticated users
   const UnauthenticatedNav = () => (
-    <nav className="fixed top-4 right-4 z-50 flex gap-2">
+    <nav className="fixed top-4 right-4 z-50 flex flex-col sm:flex-row gap-2">
       <Button
         variant="outline"
         size="sm"

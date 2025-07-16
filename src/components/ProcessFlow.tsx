@@ -32,15 +32,15 @@ export function ProcessFlow() {
   return (
     <section className="py-24 bg-gradient-to-b from-background to-secondary/30">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4">How Privacy-First Discovery Works</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+        <div className="text-center mb-12 sm:mb-16 px-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">How Privacy-First Discovery Works</h2>
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
             Our zero-knowledge architecture ensures your sensitive data never leaves your control
           </p>
         </div>
         
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 px-4 lg:px-0">
             {steps.map((step, index) => (
               <div key={index} className="relative">
                 <Card className="p-6 h-full bg-background/80 backdrop-blur-sm border border-border/50 hover:shadow-lg transition-all duration-300">

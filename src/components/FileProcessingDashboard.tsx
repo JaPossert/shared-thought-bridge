@@ -155,14 +155,14 @@ export const FileProcessingDashboard = () => {
 
   return (
     <div className="space-y-6">
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h2 className="text-2xl font-bold">File Processing Dashboard</h2>
-          <p className="text-muted-foreground">
+          <h2 className="text-xl sm:text-2xl font-bold">File Processing Dashboard</h2>
+          <p className="text-sm sm:text-base text-muted-foreground">
             Process and summarize your Google Drive files
           </p>
         </div>
-        <Button onClick={fetchFiles} disabled={loading} variant="outline">
+        <Button onClick={fetchFiles} disabled={loading} variant="outline" className="w-full sm:w-auto">
           <RefreshCw className={`h-4 w-4 mr-2 ${loading ? 'animate-spin' : ''}`} />
           Refresh
         </Button>
@@ -174,11 +174,11 @@ export const FileProcessingDashboard = () => {
           placeholder="Search files and summaries..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          className="max-w-sm"
+          className="w-full sm:max-w-sm"
         />
       </div>
 
-      <div className="grid gap-6 md:grid-cols-2">
+      <div className="grid gap-6 lg:grid-cols-2">
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
@@ -203,14 +203,14 @@ export const FileProcessingDashboard = () => {
                 </div>
               ) : (
                 filteredFiles.map((file) => (
-                  <div key={file.id} className="flex items-center justify-between p-3 rounded-lg border">
+                  <div key={file.id} className="flex flex-col sm:flex-row sm:items-center justify-between p-3 rounded-lg border gap-3 sm:gap-0">
                     <div className="flex-1 min-w-0">
                       <h4 className="font-medium truncate">{file.name}</h4>
                       <p className="text-sm text-muted-foreground">
                         {new Date(file.modifiedTime).toLocaleDateString()}
                       </p>
                     </div>
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2 justify-end sm:justify-start">
                       <Badge variant="secondary" className={getStatusColor(file.status)}>
                         {getStatusText(file.status)}
                       </Badge>
@@ -219,6 +219,7 @@ export const FileProcessingDashboard = () => {
                           size="sm"
                           onClick={() => processFile(file.id)}
                           disabled={processing.has(file.id)}
+                          className="text-xs sm:text-sm"
                         >
                           {processing.has(file.id) ? (
                             <>
