@@ -5,7 +5,7 @@ import { ProcessFlow } from "@/components/ProcessFlow";
 import { TrustSection } from "@/components/TrustSection";
 import { DashboardPreview } from "@/components/DashboardPreview";
 import { Button } from "@/components/ui/button";
-import { LogOut, Settings, LogIn, UserPlus } from "lucide-react";
+import { LogOut, Settings, LogIn, UserPlus, FileText } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 const Index = () => {
@@ -23,6 +23,15 @@ const Index = () => {
   // Navigation for authenticated users
   const AuthenticatedNav = () => (
     <nav className="fixed top-4 right-4 z-50 flex gap-2">
+      <Button
+        variant="outline"
+        size="sm"
+        onClick={() => navigate("/files")}
+        className="bg-background/80 backdrop-blur-sm"
+      >
+        <FileText className="h-4 w-4 mr-2" />
+        Files
+      </Button>
       <Button
         variant="outline"
         size="sm"
