@@ -235,7 +235,7 @@ const Auth = () => {
           <Tabs value={defaultTab} onValueChange={setDefaultTab} className="w-full">
             <TabsList className="grid w-full grid-cols-2">
               <TabsTrigger value="signin">Sign In</TabsTrigger>
-              <TabsTrigger value="signup">Sign Up</TabsTrigger>
+              <TabsTrigger value="signup">Join the Waitlist</TabsTrigger>
             </TabsList>
             
             <TabsContent value="signin" className="space-y-4">
