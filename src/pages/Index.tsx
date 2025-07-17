@@ -63,7 +63,7 @@ const Index = () => {
         className="bg-background/80 backdrop-blur-sm"
       >
         <LogIn className="h-4 w-4 mr-2" />
-        Login
+        Login (early access)
       </Button>
       <Button
         size="sm"
@@ -71,7 +71,7 @@ const Index = () => {
         className="bg-primary text-primary-foreground backdrop-blur-sm"
       >
         <UserPlus className="h-4 w-4 mr-2" />
-        Join the waitlist
+        Join the Waitlist
       </Button>
     </nav>
   );
