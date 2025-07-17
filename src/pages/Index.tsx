@@ -71,7 +71,7 @@ const Index = () => {
         className="bg-primary text-primary-foreground backdrop-blur-sm"
       >
         <UserPlus className="h-4 w-4 mr-2" />
-        Get Started
+        Join the waitlist
       </Button>
     </nav>
   );
