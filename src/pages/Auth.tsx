@@ -45,8 +45,8 @@ const Auth = () => {
       if (error) throw error;
 
       toast({
-        title: "Welcome to the waitlist!",
-        description: "Please check your email to confirm your signup. We'll notify you as soon as our service is ready to launch.",
+        title: "Account created successfully!",
+        description: "Please check your email to verify your account.",
       });
     } catch (error: any) {
       setError(error.message);
