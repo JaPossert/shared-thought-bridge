@@ -1,6 +1,7 @@
 import { useAuth } from "@/hooks/useAuth";
 import { FileProcessingDashboard } from "@/components/FileProcessingDashboard";
 import { GoogleDriveConnection } from "@/components/GoogleDriveConnection";
+import { LogseqUpload } from "@/components/LogseqUpload";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
@@ -47,6 +48,7 @@ const FileProcessing = () => {
           </div>
           <div className="space-y-6">
             <GoogleDriveConnection />
+            <LogseqUpload />
           </div>
         </div>
       </div>

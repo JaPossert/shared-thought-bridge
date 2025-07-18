@@ -69,7 +69,7 @@ export const FileProcessingDashboard = () => {
         .from('content_summaries')
         .select('*')
         .eq('user_id', user.id)
-        .eq('source_type', 'google_drive')
+        .in('source_type', ['google_drive', 'logseq'])
         .order('created_at', { ascending: false });
 
       if (error) throw error;
