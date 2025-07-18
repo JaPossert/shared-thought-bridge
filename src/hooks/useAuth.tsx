@@ -39,10 +39,22 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
         setLoading(false);
 
         if (event === 'SIGNED_IN') {
-          toast({
-            title: "Successfully signed in",
-            description: "Welcome to your secure knowledge discovery platform.",
-          });
+          // Check if this is an email confirmation (new user)
+          const isNewUser = session?.user?.email_confirmed_at && 
+                           new Date(session.user.email_confirmed_at).getTime() > 
+                           new Date(Date.now() - 5000).getTime(); // Within last 5 seconds
+          
+          if (isNewUser) {
+            toast({
+              title: "Email confirmed successfully!",
+              description: "You're now on our waitlist. We'll notify you when our service launches.",
+            });
+          } else {
+            toast({
+              title: "Successfully signed in",
+              description: "Welcome back to your secure knowledge discovery platform.",
+            });
+          }
         }
       }
     );
