@@ -63,7 +63,7 @@ const Index = () => {
         className="bg-background/80 backdrop-blur-sm"
       >
         <LogIn className="h-4 w-4 mr-2" />
-        Login (early access)
+        Sign In
       </Button>
       <Button
         size="sm"
