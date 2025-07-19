@@ -1,10 +1,13 @@
 
-import { GoogleDriveConnection } from "@/components/GoogleDriveConnection";
 import { useAuth } from "@/hooks/useAuth";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { PrivacyControls } from "@/components/PrivacyControls";
+import { TopicApprovalSystem } from "@/components/TopicApprovalSystem";
+import { GoogleDriveConnection } from "@/components/GoogleDriveConnection";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 const Settings = () => {
   const { user } = useAuth();
@@ -30,23 +33,40 @@ const Settings = () => {
           <h1 className="text-3xl font-bold">Settings</h1>
         </div>
 
-        <div className="grid gap-6">
-          <Card>
-            <CardHeader>
-              <CardTitle>Account Information</CardTitle>
-              <CardDescription>Your account details</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-2">
-                <p><strong>Email:</strong> {user.email}</p>
-                <p><strong>User ID:</strong> {user.id}</p>
-                <p><strong>Created:</strong> {new Date(user.created_at).toLocaleDateString()}</p>
-              </div>
-            </CardContent>
-          </Card>
-
-          <GoogleDriveConnection />
-        </div>
+        <Tabs defaultValue="privacy" className="space-y-6">
+          <TabsList className="grid w-full grid-cols-3">
+            <TabsTrigger value="privacy">Privacy & Data</TabsTrigger>
+            <TabsTrigger value="topics">Topic Approval</TabsTrigger>
+            <TabsTrigger value="account">Account & Connections</TabsTrigger>
+          </TabsList>
+          
+          <TabsContent value="privacy">
+            <PrivacyControls />
+          </TabsContent>
+          
+          <TabsContent value="topics">
+            <TopicApprovalSystem />
+          </TabsContent>
+          
+          <TabsContent value="account">
+            <div className="space-y-6">
+              <Card>
+                <CardHeader>
+                  <CardTitle>Account Information</CardTitle>
+                  <CardDescription>Your account details</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-2">
+                    <p><strong>Email:</strong> {user.email}</p>
+                    <p><strong>User ID:</strong> {user.id}</p>
+                    <p><strong>Created:</strong> {new Date(user.created_at).toLocaleDateString()}</p>
+                  </div>
+                </CardContent>
+              </Card>
+              <GoogleDriveConnection />
+            </div>
+          </TabsContent>
+        </Tabs>
       </div>
     </div>
   );
